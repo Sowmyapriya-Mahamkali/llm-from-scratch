@@ -43,18 +43,22 @@ This project demonstrates the capability to design **custom language models**, i
 
 ## 🗂 Repository Structure
 
-llm_project/
-├── README.md
-├── config.yaml # Training configurations
-├── requirements.txt # Dependencies
-├── run_llm.py # Training & inference runner
-├── data/ # Sample datasets
-├── training/ # Training scripts
-├── model/ # Transformer implementation
-├── tokenizer/ # Tokenizer scripts & vocab
-├── inference/ # Inference scripts
-├── notebooks/ # Experiment notes
-└── web_ui/ # FastAPI + HTML/JS web interface
+## 🗂 Repository Structure
+
+**llm_project/** – Root folder for the LLM project  
+├─ **README.md** – Project overview and instructions  
+├─ **config.yaml** – Training and model configuration parameters  
+├─ **requirements.txt** – Python dependencies  
+├─ **run_llm.py** – Script to run training or inference  
+├─ **data/** – Sample datasets (e.g., `tiny_shakespeare.txt`)  
+├─ **training/** – Training scripts, checkpoints, and utilities  
+├─ **model/** – Transformer model implementation (attention, feed-forward layers, etc.)  
+├─ **tokenizer/** – Tokenizer scripts and vocabulary files  
+├─ **inference/** – Scripts for generating text using the trained model  
+├─ **notebooks/** – Experiment notes and analysis in Markdown/Jupyter notebooks  
+└─ **web_ui/** – Browser-based web interface (FastAPI backend + HTML/JS frontend)  
+
+> ⚠️ **Note:** Large model checkpoints (~4+ GB) are excluded from this repo. Download separately from [Google Drive](#) and place in `checkpoints/` before running inference.
 
 
 ---
