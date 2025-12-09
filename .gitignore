@@ -1,13 +1,14 @@
-# Python virtual environments
+# Ignore Python environment and caches
 venv/
 __pycache__/
 *.pyc
 
-# OS files
-.DS_Store
-Thumbs.db
-
-
+# Ignore large model weights
+checkpoints/
+*.pt
+*.pth
+*.bin
+*.ckpt
 
 
 
