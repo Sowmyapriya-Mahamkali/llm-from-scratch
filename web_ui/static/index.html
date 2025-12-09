@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Mini-LLM Chat UI</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    #chat { width: 800px; max-width: 90%; margin: auto; }
+    textarea { width: 100%; height: 80px; }
+    pre { background: #f4f4f4; padding: 10px; }
+  </style>
+</head>
+<body>
+  <div id="chat">
+    <h2>Mini-LLM Chat UI</h2>
+    <textarea id="prompt">Hello</textarea><br/>
+    <label>Length: <input id="length" value="100" /></label>
+    <label>Temperature: <input id="temperature" value="1.0" /></label>
+    <label>Top-k: <input id="top_k" value="40" /></label>
+    <label>Top-p: <input id="top_p" placeholder="empty for none" /></label>
+    <button id="gen">Generate</button>
+    <h3>Output</h3>
+    <pre id="out"></pre>
+  </div>
+  <script>
+    document.getElementById('gen').onclick = async () => {
+      const prompt = document.getElementById('prompt').value;
+      const length = parseInt(document.getElementById('length').value||100);
+      const temperature = parseFloat(document.getElementById('temperature').value||1.0);
+      const top_k = parseInt(document.getElementById('top_k').value||40);
+      const top_p_raw = document.getElementById('top_p').value;
+      const top_p = top_p_raw === '' ? null : parseFloat(top_p_raw);
+      const resp = await fetch('/generate', {
+        method: 'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({prompt, length, temperature, top_k, top_p})
+      });
+      const j = await resp.json();
+      document.getElementById('out').textContent = j.text || j.error || JSON.stringify(j);
+    };
+  </script>
+</body>
+</html>
