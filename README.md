@@ -43,8 +43,6 @@ This project demonstrates the capability to design **custom language models**, i
 
 ## 🗂 Repository Structure
 
-## 🗂 Repository Structure
-
 **llm_project/** – Root folder for the LLM project  
 ├─ **README.md** – Project overview and instructions  
 ├─ **config.yaml** – Training and model configuration parameters  
@@ -85,7 +83,6 @@ This project demonstrates the capability to design **custom language models**, i
 
 ## 🚀 Quick Start
 
-
 # 1. Create & activate virtual environment
 python -m venv venv
 # Windows
@@ -111,9 +108,7 @@ python api/server.py
 💡 Why This Project Matters
 
 Demonstrates end-to-end LLM pipeline from scratch
-
 Provides hands-on experience with Transformer internals
-
 Ideal for learning, research, and portfolio showcase
 
 🌐 Connect With Authors
